@@ -1,0 +1,55 @@
+/*1. select all elements in the before and after elements and change the box sizing to border box making it easier to size our elements*/
+*,*::before,*::after{
+box-sizing: border-box;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-weight: normal;
+}
+/*set up background and style the background*/
+body{
+    padding: 0;
+    margin:0 ;
+    background:linear-gradient(to right,#00AAFF,#00f6c0)
+}
+/*style the script*/
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: minmax(120px, auto) repeat(5,100px);
+}
+/*position our button by selecting them*/
+.calculator-grid> button {
+   cursor:pointer;/*allows us to have a cursor*/
+   font-size:2rem ;
+   border: 1px solid white;/*allows us to have a border between all our elements*/
+   outline: none;/*remove the ouline*/
+   background-color: rgba(255,255, 255,.75 )
+
+}
+.calculator-grid> button:hover {
+    background-color: rgba(255,255, 255,.90% )
+}
+.span-two {
+   grid-column: span 2; /*makes the span buttons take up two columns*/
+}
+.output {
+    grid-column: 1/ -1; /*makes the workspace have its separate section*/
+    background-color: rgba(0,0,0,.75);
+    display: flex;
+    align-items: flex-end;
+    justify-content:  space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break:break-all;
+ }
+ .output .previous-operand{
+    color: rgba(255,255, 255,.75 );
+    font-size: 1.5rem;
+ }
+ .output .current-operand{
+    color: white;
+    font-size: 2.5rem;
+ }
